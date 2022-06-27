@@ -19,9 +19,20 @@ franchise = {
 }
 z = [ {'x': 10, 'y': 20} ]
 #1.) How would you change the value 10 in x to 15?  Once you're done x should then be [ [5,2,3], [15,8,9] ].  
+x[1][0] = 15
+4   print(x)
+
 #2.) How would you change the hero_name of the first hero from 'Batman' to "Dark Knight"?
+heros[0]['hero_name'] = 'Dark Knight'
+print(heros)
+
 #3.) For the franchise dictionary, how would you change 'Aquaman' to 'Daredevil'?
+franchise['dc'][1] = 'Daredevil'
+print(franchise)
+
 #4.) For z, how would you change the value 20 to 30?
+z[0]['y']=30
+print(z)
 
 #-----------------------------------------------------------------
 #Problem 2
@@ -35,7 +46,11 @@ superheros = [
     {'real_name': 'Diana Prince', 'hero_name': 'Wonder Woman'}
 ]
 
-#iterateDictionary(superheros) should output
+def iterateDictionary(superheros):
+    for i in superheros:
+    print(i)
+    
+iterateDictionary(superheros) #should output
 
 #real_name - Steve Rogers, hero_name - Captain America
 #real_name - Barry Allan, hero_name - The Flash
@@ -53,7 +68,10 @@ superheros = [
 #Bruce Banner
 #Diana Prince
 
-
+iterateDictionary2('real_name', superheros)
+for i in range(0,4):
+    print(superheros[i]['real_name'])
+    
 #-----------------------------------------------------------------
 #Problem 4
 #Create a function that prints the name of each disney and pixar movie and also how many movies each category currently has.
