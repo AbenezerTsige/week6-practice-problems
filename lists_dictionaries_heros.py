@@ -17,11 +17,28 @@ franchise = {
     'dc' : ['Batman', 'Aquaman', 'Wonder Woman', 'Superman'],
     'marvel' : ['Hulk', 'Thor', 'Black Widow']
 }
+
 z = [ {'x': 10, 'y': 20} ]
+
 #1.) How would you change the value 10 in x to 15?  Once you're done x should then be [ [5,2,3], [15,8,9] ].  
+x[1][0] = 15
+print('#1.1')
+print(x)
+
 #2.) How would you change the hero_name of the first hero from 'Batman' to "Dark Knight"?
+heros[0]['hero_name'] = 'Dark Knight'
+print('#1.2')
+print(heros)
+
 #3.) For the franchise dictionary, how would you change 'Aquaman' to 'Daredevil'?
+franchise['dc'][1] = 'Daredevil'
+print('#1.3')
+print(franchise)
+
 #4.) For z, how would you change the value 20 to 30?
+z[0]['y']=30
+print('#1.4')
+print(z)
 
 #-----------------------------------------------------------------
 #Problem 2
@@ -35,8 +52,12 @@ superheros = [
     {'real_name': 'Diana Prince', 'hero_name': 'Wonder Woman'}
 ]
 
-#iterateDictionary(superheros) should output
-
+print('#2')
+def iterateDictionary(superheros):
+    for i in superheros:
+        print(i)
+    
+iterateDictionary(superheros) #should output
 #real_name - Steve Rogers, hero_name - Captain America
 #real_name - Barry Allan, hero_name - The Flash
 #real_name - Bruce Banner, hero_name - The Incredible Hulk 
@@ -45,15 +66,22 @@ superheros = [
 #------------------------------------------------------------------
 #Problem 3
 #Create a function that given a list of dictionaries and a key name, 
-#it outputs the value stored in that key for each dictionary.  
-#For example, iterateDictionary2('real_name', superheros) should output
 
+print('#3')
+def iterateDictionary2(real_name, superheros):
+    for i in range(0,4):
+        print(superheros[i]['real_name'])
+
+#it outputs the value stored in that key for each dictionary.  
+#For example, 
+iterateDictionary2('real_name', superheros) 
+
+#should output
 #Steve Rogers
 #Barry Allan
 #Bruce Banner
 #Diana Prince
-
-
+    
 #-----------------------------------------------------------------
 #Problem 4
 #Create a function that prints the name of each disney and pixar movie and also how many movies each category currently has.
@@ -62,6 +90,14 @@ movie_collection = {
     'disney': ['Cinderella', 'Encanto', 'Little Mermaid', 'Tangled', 'Beauty & The Beast', 'Lion King', '101 Dalmations'],
     'pixar': ['Toy Story', 'Monsters, Inc.', 'Up', 'Finding Nemo', 'Coco', 'Wall-E', 'The Incredibles', 'Inside Out']
 }
+print('#4')
+
+print('#{} DISNEY'.format(len(movie_collection['disney']))) 
+for i in movie_collection['disney']:
+    print('#- ',i)
+print('#{} PIXAR'.format(len(movie_collection['pixar'])))
+for i in movie_collection['pixar']:
+    print('#- ',i)
 
 #Expected Outpout
 #7 DISNEY
